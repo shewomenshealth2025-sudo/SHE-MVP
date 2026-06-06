@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHE | Women's Health Made Easier</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" onclick="startOver()">SHE</a>
+    <nav>
+      <a href="#" onclick="startOver()">Home</a>
+      <a href="#safety">Safety</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <h1>SHE</h1>
+        <p class="headline">Women’s health, made easier.</p>
+        <p class="subheadline">Ask a question. Understand what’s happening. Know what to do next.</p>
+
+        <form class="search-wrap" onsubmit="event.preventDefault(); runSearch();">
+          <input id="searchInput" type="text" autocomplete="off" placeholder="Ask a question about your health..." />
+          <button type="submit">Get guidance</button>
+        </form>
+
+        <div class="examples" aria-label="Example searches">
+          <button onclick="setQuestion('Why are my periods so painful?')">Why are my periods so painful?</button>
+          <button onclick="setQuestion('Could I be in perimenopause?')">Could I be in perimenopause?</button>
+          <button onclick="setQuestion('Why am I always tired?')">Why am I always tired?</button>
+          <button onclick="setQuestion('I have fatigue, joint pain and brain fog')">I have fatigue, joint pain and brain fog</button>
+          <button onclick="setQuestion('Why is sex painful?')">Why is sex painful?</button>
+          <button onclick="setQuestion('Why am I losing hair?')">Why am I losing hair?</button>
+        </div>
+
+        <p class="trust-line">Educational guidance only. Not a diagnosis.</p>
+      </div>
+    </section>
+
+    <section class="results" id="results" aria-live="polite">
+      <div class="results-top">
+        <button class="ghost-btn" onclick="startOver()">← Ask another question</button>
+      </div>
+
+      <article class="answer-card intro-card">
+        <p class="eyebrow">Your concern</p>
+        <h2 id="resultTitle">SHE guidance</h2>
+        <p id="concernSummary"></p>
+      </article>
+
+      <article class="answer-card">
+        <h3>Understanding what may be happening</h3>
+        <div id="understanding"></div>
+      </article>
+
+      <article class="answer-card">
+        <h3>Areas worth exploring</h3>
+        <p class="small-note">This is not a diagnosis. These are possible areas that may be worth discussing with a healthcare professional.</p>
+        <div class="explore-grid" id="areas"></div>
+      </article>
+
+      <article class="answer-card">
+        <h3>Questions to ask a healthcare professional</h3>
+        <ul id="questions"></ul>
+      </article>
+
+      <article class="answer-card highlight-card">
+        <h3>Appointment summary</h3>
+        <p id="appointment"></p>
+        <button class="copy-btn" onclick="copySummary()">Copy summary</button>
+      </article>
+
+      <article class="answer-card">
+        <h3>Things that may help</h3>
+        <ul id="helps"></ul>
+      </article>
+
+      <article class="answer-card">
+        <h3>Services and support</h3>
+        <p id="services"></p>
+      </article>
+
+      <article class="answer-card urgent-card" id="urgentCard">
+        <h3>When to seek urgent help</h3>
+        <p id="urgent"></p>
+      </article>
+    </section>
+  </main>
+
+  <footer id="safety">
+    SHE does not provide diagnosis, treatment, or emergency support. If symptoms are severe, sudden, worsening, or you feel unsafe, contact emergency services or a qualified healthcare professional.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
